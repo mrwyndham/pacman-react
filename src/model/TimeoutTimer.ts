@@ -27,6 +27,13 @@ export class TimeoutTimer {
 
   @action.bound
   start() {
+    const name = window.localStorage.getItem('name');  
+    if (name == '' || name == null) {
+      let foo = window.prompt('Type name here:');
+      window.localStorage.setItem('name', foo ?? '');
+    }
+    
+    
     this.running = true;
     this.timeSpent = 0;
   }

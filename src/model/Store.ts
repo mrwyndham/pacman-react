@@ -10,6 +10,7 @@ export class Store {
 
   @action.bound
   resetGame() {
+    window.localStorage.setItem('end', 'false');
     this.game = new Game(this);
     this.game.readyGameForPlay();
   }
